@@ -1,0 +1,137 @@
+:root {
+  /* Bloomberg Terminal Colors */
+  --bg-primary: #000000;
+  --bg-panel: #000000;
+  --text-primary: #ffeb3b; /* Amber / Yellowish */
+  --text-secondary: #00e5ff; /* Cyan */
+  --text-magenta: #e040fb; /* Magenta highlights */
+  --text-muted: #888888;
+  
+  /* Status Colors */
+  --status-up: #00ff00; /* Pure Green */
+  --status-down: #ff0000; /* Pure Red */
+
+  /* Borders / Grid lines */
+  --border-color: #004488; /* Dark Terminal Blue */
+  --border-thin: 1px solid var(--border-color);
+  --border-thick: 2px solid var(--border-color);
+
+  /* Fonts */
+  --font-mono: 'Consolas', 'Courier New', monospace;
+  
+  /* Utilities */
+  --transition-none: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.2;
+  min-height: 100vh;
+  -webkit-font-smoothing: none; /* Make fonts look aliased and raw */
+  font-size: 14px;
+}
+
+/* Core Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  font-weight: normal;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+a {
+  color: var(--text-magenta);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Base Inputs/Buttons */
+button {
+  background: black;
+  color: var(--text-secondary);
+  border: 1px solid var(--text-secondary);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--text-secondary);
+  color: black;
+}
+
+input, textarea {
+  background: black;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  padding: 4px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--text-secondary);
+}
+
+/* Terminal Scrolling animations - keeping only necessary ones */
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes flashGreen {
+  0% { background-color: var(--status-up); color: black; }
+  100% { background-color: transparent; color: var(--status-up); }
+}
+
+@keyframes flashRed {
+  0% { background-color: var(--status-down); color: white; }
+  100% { background-color: transparent; color: var(--status-down); }
+}
+
+.flash-up {
+  color: var(--status-up);
+  animation: flashGreen 0.5s step-end;
+}
+
+.flash-down {
+  color: var(--status-down);
+  animation: flashRed 0.5s step-end;
+}
+
+/* Blink Cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Resets */
+.container {
+  width: 100%;
+  padding: 0;
+  max-width: none;
+}

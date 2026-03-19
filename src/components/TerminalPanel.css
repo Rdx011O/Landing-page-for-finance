@@ -1,0 +1,55 @@
+.terminal-panel {
+  border: var(--border-thin);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  height: 100%;
+}
+
+.panel-header {
+  background: var(--border-color);
+  color: white;
+  padding: 2px 8px;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.panel-title {
+  color: #ffffff;
+}
+
+.panel-extra {
+  color: var(--text-primary);
+}
+
+.panel-content {
+  padding: 8px;
+  flex: 1;
+  overflow: auto;
+}
+
+.panel-content.no-padding {
+  padding: 0;
+}
+
+/* Custom Scrollbar for Terminals */
+.panel-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.panel-content::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border-left: 1px solid var(--border-color);
+}
+
+.panel-content::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+.panel-content::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+        <h1>Finanzopedia</h1>
+        <div id="ticker">
+            <marquee behavior="scroll" direction="left">
+                Breaking News: Stock market hits record high! | Inflation rates steady | Central bank announces new policies...
+            </marquee>
+        </div>
+    </header>
+
+    <main>
+        <section class="news-articles">
+            <article>
+        <h2>market otherview </h2>
+          <div id="index-ticker">
+    <div class="index">
+        <span class="index-name">Nifty</span>
+        <span class="index-price" id="nifty-price"></span>
+        <span class="index-change" id="nifty-change"></span>
+    </div>
+    <div class="index">
+        <span class="index-name">Sensex</span>
+        <span class="index-price" id="sensex-price"></span>
+        <span class="index-change" id="sensex-change"></span>
+    </div>
+    <div class="index">
+        <span class="index-name">BnkNifty</span>
+        <span class="index-price" id="banknifty-price"></span>
+        <span class="index-change" id="banknifty-change"></span>
+    </div>
+</div>
+            </article>
+       
+           
+           
+            <article>
+             
+                <h2>Market sentiment</h2>
+                <p>stock exchanges view</p>
+                <p>NSE</p>
+                <div class="index-adv">
+                  <div class="red-bar">
+                   <div class="green-bar">
+                   </div>
+                  </div>
+                </div>
+                 <p>BSE</p>
+                <div class="index-adv">
+                  <div class="red-bar1">
+                   <div class="green-bar1">
+                   </div>
+                  </div>
+                </div>
+
+            </article>
+        </section>
+    </main>
+<div id="news-container"></div>
+
+<div class="access">
+  <h3> login or signup for more</h3>
+  <div style="text-align: center;">
+ <a href="https://g.co/kgs/whnLVbW"> 
+ <button>let's dive</button></a>
+  </div>
+</div>
+<hr>
+  <div class="contact-us">
+        <h2>Contact Us</h2>
+        <p>We're here to assist you with any inquiries you may have. Please feel free to reach out to us!</p>
+        <div class="contact-info">
+            <div class="info-item">
+                <h3>Phone</h3>
+                <p><a href="tel:+911234567890">+91 (123) 456-7890</a></p>
+                <p class="call-acceptance">We accept calls from 9 AM to 6 PM IST, Monday to Friday.</p>
+            </div>
+            <div class="info-item">
+                <h3>Email</h3>
+                <p><a href="mailto:info@financialnewsindia.com">info@financialnewsindia.com</a></p>
+            </div>
+            <div class="info-item">
+                <h3>Address</h3>
+                <p>123 Finance Avenue,<br>Moneytown, New Delhi 110001</p>
+            </div>
+        </div>
+        <p class="update-line">Stay updated with our latest news and insights by visiting our website regularly.</p>
+        
+        <div class="comment-section">
+            <h3>Leave a Comment</h3>
+            <form id="commentForm">
+                <textarea placeholder="Enter your comment here..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+        <div class="rating-section">
+            <h3>Rate our Service</h3>
+            <div class="rating-stars" id="ratingStars">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <p class="rating-text">Current Rating: <span id="currentRating">0</span> out of 5 stars</p>
+            <p class="likes-count">5 Star Ratings: <span id="fiveStarCount">0</span></p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Financial News. All rights reserved.</p>
+    </footer>
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+  </html>

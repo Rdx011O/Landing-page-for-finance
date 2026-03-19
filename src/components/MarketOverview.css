@@ -1,0 +1,83 @@
+.terminal-table-wrapper {
+  overflow-x: auto;
+  border-bottom: 1px dashed var(--border-color);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+
+.terminal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: right;
+}
+
+.terminal-table th {
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 4px 8px;
+  font-weight: normal;
+}
+
+.terminal-table th:first-child,
+.terminal-table td:first-child {
+  text-align: left;
+}
+
+.terminal-table td {
+  padding: 4px 8px;
+  border-bottom: 1px dotted #112233;
+}
+
+.terminal-table tbody tr:hover {
+  background: #001a33;
+}
+
+.sym {
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.text-up {
+  color: var(--status-up);
+}
+
+.text-down {
+  color: var(--status-down);
+}
+
+.text-warning {
+  color: #ff9800;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.blink {
+  animation: blink 1.5s infinite;
+}
+
+.terminal-stats-grid {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: #000c1a;
+  border: 1px solid var(--border-color);
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 14px;
+}

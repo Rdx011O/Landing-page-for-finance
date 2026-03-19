@@ -1,0 +1,25 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 4px; /* Tiny padding from screen edge */
+  gap: 4px;
+}
+
+.app-layout::before, .app-layout::after {
+  display: none; /* Remove gradients */
+}
+
+.main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr auto; /* Ticker, Main Body (Chart/Market/News), Footer */
+  gap: 4px;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}

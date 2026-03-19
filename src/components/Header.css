@@ -1,0 +1,84 @@
+.terminal-header {
+  border: var(--border-thick);
+  background: var(--bg-panel);
+  padding: 4px;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--border-thin);
+  padding-bottom: 2px;
+  font-size: 13px;
+}
+
+.separator {
+  margin: 0 8px;
+  color: var(--border-color);
+}
+
+.text-cyan {
+  color: var(--text-secondary);
+}
+
+.text-magenta {
+  color: var(--text-magenta);
+}
+
+.header-cmd {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  background: #001100;
+  padding: 4px 8px;
+  border: 1px solid #003300;
+  color: var(--status-up);
+}
+
+.prompt {
+  margin-right: 8px;
+  color: var(--status-up);
+}
+
+.cmd-input {
+  background: transparent;
+  border: none;
+  color: var(--status-up);
+  width: 90%;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.cmd-input::placeholder {
+  color: #005500;
+}
+
+.cmd-input:focus {
+  outline: none;
+  border: none;
+}
+
+.header-nav {
+  display: flex;
+  gap: 16px;
+  padding-top: 2px;
+  font-size: 12px;
+}
+
+.header-nav a {
+  color: var(--text-primary);
+  background: #111;
+  padding: 2px 8px;
+  border: 1px solid #333;
+}
+
+.header-nav a:hover {
+  background: var(--text-secondary);
+  color: black;
+  border-color: var(--text-secondary);
+  text-decoration: none;
+}
