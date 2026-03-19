@@ -4,11 +4,11 @@ import { useRealTimeStock } from '../hooks/useRealTimeStock';
 import TerminalPanel from './TerminalPanel';
 
 const TerminalChart = () => {
-  const { marketData } = useRealTimeStock();
+  const { marketData, activeSymbol } = useRealTimeStock();
   
-  // Nifty 50 is our target for the chart
-  const data = marketData.nifty.history;
-  const currentPrice = marketData.nifty.price;
+  // The active symbol replaces the hardcoded NIFTY
+  const data = marketData.active?.history || [];
+  const currentPrice = marketData.active?.price || 0;
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -23,7 +23,7 @@ const TerminalChart = () => {
   };
 
   return (
-    <TerminalPanel title="G 1 <GO> : NIFTY 50 INTRADAY" extraHeader={`${currentPrice.toFixed(2)}`}>
+    <TerminalPanel title={`G 1 <GO> : ${activeSymbol} INTRADAY`} extraHeader={`${currentPrice.toFixed(2)}`}>
       <div style={{ width: '100%', height: '300px', backgroundColor: '#000' }}>
         {data.length > 0 ? (
           <ResponsiveContainer width="100%" height="100%">
@@ -45,7 +45,7 @@ const TerminalChart = () => {
                 tickFormatter={(val) => val.toFixed(0)}
               />
               <Tooltip content={<CustomTooltip />} />
-              <ReferenceLine y={data[0]?.price} stroke="#ffeb3b" strokeDasharray="3 3" />
+              <ReferenceLine y={data.length > 0 ? data[0].price : currentPrice} stroke="#ffeb3b" strokeDasharray="3 3" />
               <Line 
                 type="stepAfter" 
                 dataKey="price" 

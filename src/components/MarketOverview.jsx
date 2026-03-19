@@ -51,6 +51,7 @@ const MarketOverview = () => {
             {renderRow(marketData.nifty)}
             {renderRow(marketData.sensex)}
             {renderRow(marketData.banknifty)}
+            {marketData.stocks && marketData.stocks.map(stock => renderRow(stock))}
           </tbody>
         </table>
       </div>

@@ -37,6 +37,12 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: none; /* Make fonts look aliased and raw */
   font-size: 14px;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Ensure html also doesn't scroll horizontally */
+html {
+  overflow-x: hidden;
 }
 
 /* Core Typography */

@@ -5,12 +5,14 @@ import TerminalChart from './components/TerminalChart';
 import MarketOverview from './components/MarketOverview';
 import TerminalNews from './components/TerminalNews';
 import TerminalPanel from './components/TerminalPanel';
+import { StockProvider } from './hooks/useRealTimeStock';
 import './App.css';
 
 function App() {
   return (
-    <div className="app-layout">
-      <Header />
+    <StockProvider>
+      <div className="app-layout">
+        <Header />
       <TickerQueue />
       
       <main className="main-content">
@@ -41,6 +43,7 @@ function App() {
         </div>
       </main>
     </div>
+    </StockProvider>
   );
 }
 

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useStockContext } from '../hooks/useRealTimeStock';
 import './Header.css';
 
 const Header = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString('en-US', { hour12: false }));
   const [date, setDate] = useState(new Date().toLocaleDateString('en-GB'));
   const [cmd, setCmd] = useState('');
+
+  const { setActiveSymbol } = useStockContext();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -16,7 +19,12 @@ const Header = () => {
   const handleCommand = (e) => {
     e.preventDefault();
     if (cmd.trim().toUpperCase() === 'HELP') {
-      alert("Terminal Commands: \nNIFTY <GO>\nSENSEX <GO>\nNEWS <GO>");
+      alert("Terminal Commands: \nNIFTY <GO>\nSENSEX <GO>\nNEWS <GO>\nOr enter any stock symbol (e.g., RELIANCE.NS, TSLA)");
+    } else if (cmd.trim() !== '') {
+      let fetchSymbol = cmd.trim().toUpperCase();
+      if (fetchSymbol === 'NIFTY') fetchSymbol = '^NSEI';
+      if (fetchSymbol === 'SENSEX') fetchSymbol = '^BSESN';
+      setActiveSymbol(fetchSymbol);
     }
     setCmd('');
   };

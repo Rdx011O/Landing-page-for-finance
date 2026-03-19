@@ -10,6 +10,7 @@
 
 .header-top {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: var(--border-thin);
   padding-bottom: 2px;
@@ -64,6 +65,7 @@
 
 .header-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   padding-top: 2px;
   font-size: 12px;
